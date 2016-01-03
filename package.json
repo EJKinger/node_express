@@ -1,0 +1,23 @@
+{
+  "name": "node_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EJKinger/node_express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EJKinger/node_express/issues"
+  },
+  "homepage": "https://github.com/EJKinger/node_express#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
