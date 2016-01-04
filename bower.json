@@ -1,0 +1,22 @@
+{
+  "name": "node_express",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Eric King <e.king117@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/EJKinger/node_express",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0"
+  }
+}
