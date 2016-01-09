@@ -1,21 +1,30 @@
 var express = require('express');
-
 var app = express();
-
 var port = process.env.PORT || 8080;
+
+var nav = [
+  { link: '/books', text: 'Books'}, 
+  { link: '/authors', text: 'Authors'}
+];
+var bookRouter = require('./src/routes/bookRoutes')(nav);
 
 app.use(express.static('public'));
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
-app.get('/', function (req, res){
-  res.render('index', {list: ['a', 'b'], title: 'myApp'});
-});
+app.use('/books', bookRouter);
 
-app.get('/books', function (req, res){
-  res.send('Hello Books');
+app.get('/', function (req, res){
+  res.render('index', { 
+    nav: [
+      { link: '/books', text: 'Books'}, 
+      {link: '/authors', text: 'Authors'}
+    ],
+    title: 'Home'
+  });
 });
 
 app.listen(port, function(err){
   console.log('running server on port ' + port);
 });
+
