@@ -16,10 +16,7 @@ app.use('/books', bookRouter);
 
 app.get('/', function (req, res){
   res.render('index', { 
-    nav: [
-      { link: '/books', text: 'Books'}, 
-      {link: '/authors', text: 'Authors'}
-    ],
+    nav: nav,
     title: 'Home'
   });
 });
