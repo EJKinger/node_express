@@ -10,9 +10,13 @@ module.exports = function(){
       var url = 'mongodb://localhost:27017/libraryApp';
       mongodb.connect(url, function (err, db){
         var collection = db.collection('users');
-        collection.findOne({userName: username}, function (err, results){
-          var user = results;
-          done(null, user);
+        collection.findOne({username: username}, function (err, results){
+          if (results.password === password){
+            var user = results;
+            done(null, user);
+          } else {
+            done(null, false, {message: 'Bad Password'});
+          }
         });
     });
   }));
